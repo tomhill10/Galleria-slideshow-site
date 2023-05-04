@@ -24,7 +24,7 @@ $.ajax("../data/data.json").then((data) => {
 <div class="artist-right">
     <h1 class="display artist-right-display">${selectedArtist.year}</h1>
     <p class="body artist-right-body">${selectedArtist.description}</p>
-    <p class="subhead-1 artist-right-p">GO TO SOURCE</p>
+    <a href="${selectedArtist.source}" class="subhead-1 artist-right-a">GO TO SOURCE</a>
 </div>
 </div>
 

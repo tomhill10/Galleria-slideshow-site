@@ -8,8 +8,8 @@ body {
 }
 
 .header-container {
-  width: 100%;
-  max-width: 90vw;
+  width: 90vw;
+  max-width: 3000px;
   background-color: var(--color-white);
   display: flex;
   justify-content: space-between;
@@ -29,8 +29,10 @@ body {
 }
 
 .artist-container {
-  max-width: 90vw;
-  height: 90vh;
+  max-width: 3000px;
+  width: 90vw;
+  max-height: 1600px;
+  height: 75vh;
 }
 
 .artist {
@@ -46,6 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding-bottom: 5%;
 }
 
 /*-------------------------------LEFT----------------------------*/
@@ -64,6 +67,7 @@ body {
 .artist-left-name-artistName {
   background-color: white;
   padding: 10px;
+  padding-left: 30px;
   color: black;
   display: flex;
   flex-direction: column;

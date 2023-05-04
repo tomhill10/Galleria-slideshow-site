@@ -65,4 +65,5 @@ body {
 .gallery-artist img:hover {
   width: 110%;
   height: auto;
+  cursor: pointer;
 }

@@ -177,3 +177,23 @@ body {
   height: 100px;
   max-height: 100px;
 }
+
+.artist-footer-arrows-wrapper img[alt="arrow"]:first-of-type {
+  padding: 20px;
+  filter: invert(70%);
+}
+
+.artist-footer-arrows-wrapper img[alt="arrow"]:last-of-type {
+  padding: 20px;
+  filter: invert(70%);
+}
+
+.artist-footer-arrows-wrapper img[alt="arrow"]:first-of-type:hover {
+  padding: 20px;
+  filter: invert(0%);
+}
+
+.artist-footer-arrows-wrapper img[alt="arrow"]:last-of-type:hover {
+  padding: 20px;
+  filter: invert(0%);
+}

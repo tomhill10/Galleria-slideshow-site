@@ -15,9 +15,11 @@ fetch("./data/data.json")
         <img src="${artist.images.gallery}" alt="artwork">
       `;
       div.addEventListener("click", function () {
+        localStorage.setItem("selectedArtist", JSON.stringify(artist));
         localStorage.setItem("selectedArtistIndex", index);
         window.location.href = "./pages/slideshow.html";
       });
+
       artistsContainer.appendChild(div);
     });
   });

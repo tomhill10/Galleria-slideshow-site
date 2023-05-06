@@ -7,7 +7,7 @@ function showArtist(index) {
     .then((data) => {
       const selectedArtist = data[index];
       const artistContainer = document.querySelector(".artist-container");
-      artistContainer.innerHTML = ""; // clear previous artist data
+      artistContainer.innerHTML = "";
 
       const div = document.createElement("div");
       div.className = "artist";
@@ -20,7 +20,7 @@ function showArtist(index) {
             </div>
             <div class="artist-left-image">
               <img src=".${selectedArtist.images.hero.small}" alt="artist-image">
-              <button class="artist-left-image-button">
+              <button class="artist-left-image-button" id="buttonOpen">
                 <img src="../assets/OpenImage.svg" alt="icon"> VIEW IMAGE
               </button>
             </div>
@@ -53,6 +53,27 @@ function showArtist(index) {
       rightArrowImg.addEventListener("click", showNext);
 
       artistContainer.appendChild(div);
+
+      // Had to add this here as DOM didnt load fast enough
+      const buttonOpen = document.getElementById("buttonOpen");
+      buttonOpen.addEventListener("click", function () {
+        console.log("button press");
+        const div = document.createElement("div");
+        div.className = "view-image-container";
+        div.id = "image-container";
+        div.innerHTML = `
+          <button class="view-image-close-button" id="buttonClose">CLOSE</button>
+          <img src=".${selectedArtist.images.gallery}" alt="Picture zoomed in" class="view-image-big" />
+        `;
+        document.body.appendChild(div);
+
+        const buttonClose = document.getElementById("buttonClose");
+        buttonClose.addEventListener("click", function () {
+          console.log("button press");
+          const div = document.getElementById("image-container");
+          document.body.removeChild(div);
+        });
+      });
     });
 }
 
@@ -78,6 +99,7 @@ fetch("../data/data.json")
     localStorage.setItem("data", JSON.stringify(data));
     showArtist(currentIndex, data);
   });
+
 // window.onbeforeunload = function () {
 //   localStorage.removeItem("selectedArtistIndex");
 // };

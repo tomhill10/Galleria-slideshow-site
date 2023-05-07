@@ -99,7 +99,3 @@ fetch("../data/data.json")
     localStorage.setItem("data", JSON.stringify(data));
     showArtist(currentIndex, data);
   });
-
-// window.onbeforeunload = function () {
-//   localStorage.removeItem("selectedArtistIndex");
-// };

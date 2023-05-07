@@ -23,3 +23,16 @@ fetch("./data/data.json")
       artistsContainer.appendChild(div);
     });
   });
+
+const startSlideshow = document.getElementById("startSlideshow");
+startSlideshow.addEventListener("click", function () {
+  console.log("button pressed");
+  fetch("./data/data.json")
+    .then((response) => response.json())
+    .then((json) => {
+      const selectedArtist = json[0];
+      localStorage.setItem("selectedArtist", JSON.stringify(selectedArtist));
+      localStorage.setItem("selectedArtistIndex", 1);
+      window.location.href = "./pages/slideshow.html";
+    });
+});
